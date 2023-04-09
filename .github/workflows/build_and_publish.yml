@@ -24,7 +24,7 @@ jobs:
       - name: Bump Version
         id: bump
         uses: nnichols/maven-version-bump-action@v3
-        with:with:
+        with:
           github-token: ${{ secrets.github_token }}
 
       - name: Cache Maven dependencies
