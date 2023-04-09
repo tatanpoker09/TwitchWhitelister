@@ -29,4 +29,6 @@ jobs:
           echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
 
       - name: Build with Maven
+        env:
+          OAUTH_TEST_TOKEN: ${{ secrets.OAUTH_TEST_TOKEN }}
         run: mvn clean test

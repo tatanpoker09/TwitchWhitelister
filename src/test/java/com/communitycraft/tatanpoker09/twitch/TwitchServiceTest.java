@@ -64,8 +64,8 @@ public class TwitchServiceTest {
     }
     @AfterEach
     public void tearDown() {
-        twitchService.closeClient();
         MockBukkit.unmock();
+        twitchService.closeClient();
     }
 
     @Test
