@@ -1,0 +1,36 @@
+Contributing Code to TwitchWhitelister
+======================================
+
+## Development Requirements
+
+- Java Development Kit (JDK) 17 or newer
+- Apache Maven
+
+## Setting up the project
+
+1. Fork the repository.
+2. Clone the forked repository to your local machine: `git clone https://github.com/your-username/TwitchWhitelister.git`
+3. Create a new branch: `git checkout -b feature/my-feature`
+4. Make changes and commit: `git commit -m "Added new feature"`
+5. Push to your forked repository: `git push origin feature/my-feature`
+6. Open a pull request to the `main` branch of the original repository.
+
+## Building and testing
+
+1. Navigate to the root of the project.
+2. Build the project with Maven: `mvn clean install`
+3. Run tests with Maven: `mvn test`
+
+## Committing changes
+
+1. Make changes to the code.
+2. Stage the changes: `git add .`
+3. Commit the changes: `git commit -m "Added new feature"`
+4. Push the changes to your forked repository: `git push origin feature/my-feature`
+5. Open a pull request to the `main` branch of the original repository.
+
+## Pull requests
+
+1. Open a pull request to the `main` branch of the original repository.
+2. Add a description of the changes you made.
+3. Wait for your pull request to be reviewed.

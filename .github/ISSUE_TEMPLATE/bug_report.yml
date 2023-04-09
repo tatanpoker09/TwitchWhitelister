@@ -1,0 +1,53 @@
+name: 🐞 Bug Report
+description: Report a bug with TwitchWhitelister.
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: checkboxes
+    attributes:
+      label: Are you using the latest version of TwitchWhitelister?
+      description: Please make sure you're using the latest version of TwitchWhitelister as it's possible your issue has already been fixed.
+      options:
+        - label: I am using the latest version of TwitchWhitelister.
+          required: true
+  - type: dropdown
+    id: tw-version
+    attributes:
+      label: Plugin Version
+      description: What version of TwitchWhitelister are you using?
+      options:
+        - 1.3
+        - 1.4
+        - 1.5
+        - 1.6
+        - 1.7
+        - 1.8
+        - 1.9
+    validations:
+      required: true
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the bug
+      description: Describe the bug in as much detail as you can.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproducible Test
+      description: Please write a test that can reliably reproduce the bug.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Anything else?
+      description: |
+        Links? References? Anything that will give us more context about the issue you are encountering!
+    validations:
+      required: false
