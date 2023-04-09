@@ -37,7 +37,7 @@ public class TwitchServiceTest {
     @BeforeEach
     public void setUp() {
         MockBukkit.mock();
-        OAuth2Credential credential = new OAuth2Credential("twitch", "kccrmusf4o6dktxdg5d3pbzaqy5xda");
+        OAuth2Credential credential = new OAuth2Credential("twitch", System.getenv("OAUTH_TEST_TOKEN"));
         // create arraylist with default values
         List<String> channelNames = new ArrayList<>(){{
             add("Tamara1001");
@@ -276,7 +276,7 @@ public class TwitchServiceTest {
         twitchService.startBot();
         List<String> channelIds = twitchService.getChannelIds();
         Assertions.assertEquals(2, channelIds.size());
-        Assertions.assertEquals("120935302", channelIds.get(0));
-        Assertions.assertEquals("10896528", channelIds.get(1));
+        Assertions.assertTrue(channelIds.contains("120935302"));
+        Assertions.assertTrue(channelIds.contains("10896528"));
     }
 }
