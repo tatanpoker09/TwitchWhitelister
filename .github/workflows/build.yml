@@ -1,9 +1,7 @@
 name: Build
-
+# for all pull requests
 on:
-  push:
-    branches:
-      - main
+  pull_request:
 
 jobs:
   build:
@@ -19,11 +17,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Bump Version
-        id: bump
-        uses: nnichols/maven-version-bump-action@v3
-        with:
-          github-token: ${{ secrets.ACTIONS_GH_TOKEN }}
 
       - name: Cache Maven dependencies
         uses: actions/cache@v2
@@ -36,26 +29,6 @@ jobs:
           echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
 
       - name: Build with Maven
-        run: mvn clean package
-
-      - name: Create release
-        uses: actions/create-release@v1
-        id: create_release # Add this line
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_GH_TOKEN }}
-          GITHUB_REF: ${{ github.ref }}
-        with:
-          tag_name: ${{ env.RELEASE_VERSION }}
-          release_name: Release ${{ env.RELEASE_VERSION }}
-          body: Automated release of ${{ github.sha }}
-          draft: false
-          prerelease: false
-      - name: upload artifact to release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_GH_TOKEN }}
-        with:
-          asset_path: target/TwitchWhitelister-${{ env.RELEASE_VERSION }}.jar
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_name: TwitchWhitelister-${{ env.RELEASE_VERSION }}.jar
-          asset_content_type: application/jar
+          OAUTH_TEST_TOKEN: ${{ secrets.OAUTH_TEST_TOKEN }}
+        run: mvn clean test
