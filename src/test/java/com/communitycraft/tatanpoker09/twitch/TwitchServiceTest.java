@@ -38,6 +38,7 @@ public class TwitchServiceTest {
     public void setUp() {
         MockBukkit.mock();
         OAuth2Credential credential = new OAuth2Credential("twitch", System.getenv("OAUTH_TEST_TOKEN"));
+        System.out.println("OAUTH_TEST_TOKEN: " + System.getenv("OAUTH_TEST_TOKEN"));
         // create arraylist with default values
         List<String> channelNames = new ArrayList<>(){{
             add("Tamara1001");
