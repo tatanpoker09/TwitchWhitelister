@@ -1,6 +1,6 @@
 # Twitch Channel Whitelist Plugin
 
-[![Version](https://img.shields.io/badge/version-1.3.3-blue)](https://github.com/tatanpoker09/TwitchWhitelister/releases/tag/1.3.3)
+[![Version](https://img.shields.io/badge/version-1.3.3-green)](https://github.com/tatanpoker09/TwitchWhitelister/releases/tag/1.3.3)
 [![License](https://img.shields.io/badge/license-Creative_Commons_Attribution--NonCommercial--ShareAlike_4.0_International-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
