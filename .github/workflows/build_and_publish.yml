@@ -22,12 +22,6 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Bump Version
-        id: bump
-        uses: nnichols/maven-version-bump-action@v3
-        with:
-          github-token: ${{ secrets.github_token }}
-
       - name: Cache Maven dependencies
         uses: actions/cache@v2
         with:
