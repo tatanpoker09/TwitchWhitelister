@@ -1,0 +1,6 @@
+name: TwitchWhitelister
+main: com.communitycraft.tatanpoker09.plugin.TwitchBotPlugin
+version: ${project.version}
+api-version: 1.13
+author: tatanpoker09
+description: "Twitch Whitelist Plugin: Connect your Minecraft server to your Twitch channel and allow users to be added to a whitelist automatically by redeeming a specific Twitch reward."

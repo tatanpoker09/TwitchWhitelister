@@ -1,0 +1,8 @@
+oauthToken: OAUTH_TOKEN
+allowedRewardIds:
+  - 123
+  - 123
+channelNames:
+  - tatanpoker09
+liveMessage: "Streamer {name} has started streaming {game} with title {title}"
+offlineMessage: "Streamer {name} has stopped streaming"
