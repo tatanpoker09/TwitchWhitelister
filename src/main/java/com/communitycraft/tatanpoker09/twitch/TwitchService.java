@@ -50,6 +50,7 @@ public class TwitchService {
 
 
     private void registerLiveEvents() {
+        this.client.getClientHelper().enableStreamEventListener(this.configuration.channelNames);
         this.client.getEventManager().onEvent(ChannelGoLiveEvent.class, this::onChannelLive);
         this.client.getEventManager().onEvent(ChannelGoOfflineEvent.class, this::onChannelOffline);
     }
