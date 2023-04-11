@@ -94,7 +94,6 @@ public class TwitchService {
         String name = channel.getName();
         String liveMessage = this.configuration.liveMessage;
         liveMessage = liveMessage.replace("{name}", name).replace("{game}", gameName).replace("{title}", title);
-        plugin.getLogger().info(liveMessage);
         Bukkit.broadcast(Component.text(liveMessage));
     }
 
