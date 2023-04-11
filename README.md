@@ -1,8 +1,7 @@
 # Twitch Channel Whitelist Plugin
-
-[![Version](https://img.shields.io/badge/version-1.3.3-green)](https://github.com/tatanpoker09/TwitchWhitelister/releases/tag/1.3.3)
+[![](https://img.shields.io/github/release/tatanpoker09/TwitchWhitelister.svg)](https://github.com/tatanpoker09/TwitchWhitelister/releases/latest "Latest release")
 [![License](https://img.shields.io/badge/license-Creative_Commons_Attribution--NonCommercial--ShareAlike_4.0_International-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
+[![](https://img.shields.io/github/downloads/tatanpoker09/TwitchWhitelister/total.svg)](https://github.com/tatanpoker09/TwitchWhitelister/releases/latest "GitHub downloads")
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tatanpoker09)
 
 
@@ -48,7 +47,7 @@ offlineMessage: "Streamer {name} has stopped streaming"
 1. Configure the plugin with your Twitch channel details and reward ID using the `config.yml` file.
 2. To get an OAUTH_TOKEN you can go to https://twitchtokengenerator.com/. Press "Custom Scope Token", then just go to the bottom and press Generate Token! You will need to log in with your twitch account and then an access token will appear at the top of the website.
 3. Start your Minecraft server.
-4. You can configure rewardIds in the channels specified in the config.yml file by redeeming the rewards and typing "register whitelist" in the chat.
+4. You can configure rewardIds in the channels specified in the config.yml file by redeeming the rewards and typing "register whitelist" in your twitch chat.
 5. Afterwards, users who redeem the configured Twitch reward will be added to the whitelist automatically.
 6. The plugin will broadcast messages throughout the server when a streamer goes live or offline. You can configure these messages in the `config.yml` file.
 
