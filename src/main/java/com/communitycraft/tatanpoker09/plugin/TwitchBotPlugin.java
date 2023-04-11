@@ -53,6 +53,7 @@ public class TwitchBotPlugin extends JavaPlugin {
     @Override
     public void onEnable()
     {
+        this.saveDefaultConfig();
         String oauthToken = this.getConfig().getString("OAUTH_TOKEN");
         if (oauthToken == null || oauthToken.isEmpty()) {
             throw new RuntimeException("OAUTH_TOKEN is not set in the config file!");
@@ -62,7 +63,6 @@ public class TwitchBotPlugin extends JavaPlugin {
         if (!testing) {
             CommandAPI.onEnable(this);
         }
-        this.saveDefaultConfig();
         getLogger().info("Initializing TwitchBot");
         new WhitelistChangeCommand();
 
