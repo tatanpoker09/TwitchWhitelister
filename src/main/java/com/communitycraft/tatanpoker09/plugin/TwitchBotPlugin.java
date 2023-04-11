@@ -73,6 +73,7 @@ public class TwitchBotPlugin extends JavaPlugin {
 
         twitchService = new TwitchService(this,
                 new TwitchService.TwitchServiceConfiguration(credentials, channelNames, allowedRewardIds,liveMessage, offlineMessage));
+        twitchService.startBot();
         twitchService.registerEvents();
         getLogger().info("TwitchBot initialized");
     }
