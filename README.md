@@ -32,8 +32,8 @@ allowedRewardIds:
 - REWARD_ID_1
 - REWARD_ID_2
 channelNames:
-- CHANNEL_ID_1
-- CHANNEL_ID_2
+- CHANNEL_NAME_1
+- CHANNEL_NAME_2
 liveMessage: "Streamer {name} has started streaming {game} with title {title}"
 offlineMessage: "Streamer {name} has stopped streaming"
 ```

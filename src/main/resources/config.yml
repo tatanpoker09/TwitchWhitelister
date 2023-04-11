@@ -1,4 +1,4 @@
-oauthToken: OAUTH_TOKEN
+OAUTH_TOKEN: OAUTH_TOKEN
 allowedRewardIds:
   - 123
   - 123
