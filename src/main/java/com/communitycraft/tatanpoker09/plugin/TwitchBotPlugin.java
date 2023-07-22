@@ -5,7 +5,7 @@ import com.communitycraft.tatanpoker09.twitch.TwitchService;
 import com.communitycraft.tatanpoker09.whitelist.WhitelistManagerAPI;
 import com.github.philippheuer.credentialmanager.domain.OAuth2Credential;
 import dev.jorel.commandapi.CommandAPI;
-import dev.jorel.commandapi.CommandAPIConfig;
+import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.java.JavaPluginLoader;
@@ -45,7 +45,8 @@ public class TwitchBotPlugin extends JavaPlugin {
     @Override
     public void onLoad() {
         if(!testing) {
-            CommandAPI.onLoad(new CommandAPIConfig().verboseOutput(true));
+
+            CommandAPI.onLoad(new CommandAPIBukkitConfig(this).verboseOutput(true));
             whitelistManagerAPI = new WhitelistManagerAPI(this);
         }
     }
@@ -61,7 +62,7 @@ public class TwitchBotPlugin extends JavaPlugin {
         OAuth2Credential credentials = new OAuth2Credential("twitch", oauthToken);
 
         if (!testing) {
-            CommandAPI.onEnable(this);
+            CommandAPI.onEnable();
         }
         getLogger().info("Initializing TwitchBot");
         new WhitelistChangeCommand();

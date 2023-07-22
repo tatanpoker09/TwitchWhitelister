@@ -1,7 +1,10 @@
 package com.communitycraft.tatanpoker09.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
+import dev.jorel.commandapi.CommandPermission;
+import dev.jorel.commandapi.arguments.GreedyStringArgument;
 import dev.jorel.commandapi.arguments.StringArgument;
+import dev.jorel.commandapi.executors.CommandArguments;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.TextColor;
@@ -24,12 +27,13 @@ public class WhitelistChangeCommand {
                 .withPermission(PERMISSION)
                 .withArguments(new StringArgument("currentUsername"),
                         new StringArgument("newUsername"))
-                .executes(this::executeCommand).register();
+                .executes(this::executeCommand)
+                .register();
     }
 
-    private void executeCommand(CommandSender sender, Object[] args) {
-        String currentUsername = (String) args[0];
-        String newUsername = (String) args[1];
+    private void executeCommand(CommandSender sender, CommandArguments args) {
+        String currentUsername = (String) args.get(0);
+        String newUsername = (String) args.get(1);
 
         String message = changeWhitelist(currentUsername, newUsername);
         sender.sendRichMessage(message);
