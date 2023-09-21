@@ -69,8 +69,8 @@ public class TwitchBotPlugin extends JavaPlugin {
 
         List<String> channelNames = getConfig().getStringList("channelNames");
         List<String> allowedRewardIds = getConfig().getStringList(ALLOWED_REWARD_IDS_CONFIG_PATH);
-        String liveMessage = getConfig().getString("liveMessage");
-        String offlineMessage = getConfig().getString("offlineMessage");
+        String liveMessage = getConfig().getString("liveMessage", "");
+        String offlineMessage = getConfig().getString("offlineMessage", "");
 
         twitchService = new TwitchService(this,
                 new TwitchService.TwitchServiceConfiguration(credentials, channelNames, allowedRewardIds,liveMessage, offlineMessage));
