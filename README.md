@@ -8,6 +8,10 @@
 
 The Twitch Channel Whitelist Plugin is a Minecraft plugin that allows you to connect to your Twitch channel and configure a specific reward that will let users be added automatically to a whitelist. Additionally, the plugin broadcasts throughout the server when a streamer goes live or offline, further promoting Twitch engagement. The broadcasted messages are configurable.
 
+
+<img src="https://github.com/tatanpoker09/TwitchWhitelister/assets/6262015/98c525be-f3c5-4800-960e-1bd91b7d1b50" width="400">
+
+
 ## Features
 
 - Connect your Minecraft server to your Twitch channel
