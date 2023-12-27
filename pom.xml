@@ -2,12 +2,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.communitycraft.tatanpoker09</groupId>
 	<artifactId>TwitchWhitelister</artifactId>
-	<version>1.4.1</version>
+	<version>1.4.3</version>
 
 	<properties>
-		<minecraft.mappings>1.20.1-R0.1-SNAPSHOT</minecraft.mappings>
-		<paper.version>1.20.1-R0.1-SNAPSHOT</paper.version>
-		<spigot.version>1.20.1-R0.1-SNAPSHOT</spigot.version>
+		<minecraft.mappings>1.20.3-R0.1-SNAPSHOT</minecraft.mappings>
+		<paper.version>1.20.3-R0.1-SNAPSHOT</paper.version>
+		<spigot.version>1.20.3-R0.1-SNAPSHOT</spigot.version>
 		<powermock.version>2.0.2</powermock.version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
@@ -28,6 +28,13 @@
 		</repository>
 	</repositories>
 	<dependencies>
+
+		<dependency>
+			<groupId>com.github.seeseemelk</groupId>
+			<artifactId>MockBukkit-v1.20</artifactId>
+			<version>3.9.0</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>io.papermc.paper</groupId>
 			<artifactId>paper-api</artifactId>
@@ -49,13 +56,7 @@
 		<dependency>
 			<groupId>dev.jorel</groupId>
 			<artifactId>commandapi-bukkit-shade</artifactId>
-			<version>9.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.seeseemelk</groupId>
-			<artifactId>MockBukkit-v1.20</artifactId>
-			<version>3.9.0</version>
-			<scope>test</scope>
+			<version>9.3.0</version>
 		</dependency>
 
 		<dependency>
