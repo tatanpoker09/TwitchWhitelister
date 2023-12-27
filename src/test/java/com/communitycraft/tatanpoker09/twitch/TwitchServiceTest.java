@@ -16,6 +16,7 @@ import com.github.twitch4j.pubsub.domain.ChannelPointsReward;
 import com.github.twitch4j.pubsub.domain.ChannelPointsUser;
 import com.github.twitch4j.pubsub.events.RewardRedeemedEvent;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,7 +38,26 @@ public class TwitchServiceTest {
     @BeforeEach
     public void setUp() {
         MockBukkit.mock();
-        OAuth2Credential credential = new OAuth2Credential("twitch", System.getenv("OAUTH_TEST_TOKEN"));
+        String oauthToken = System.getenv("OAUTH_TEST_TOKEN");
+        TwitchService.TwitchServiceConfiguration configuration = getTwitchServiceConfiguration(oauthToken);
+
+        mockPlugin = mock(TwitchBotPlugin.class);
+        FileConfiguration fileConfiguration = mock(FileConfiguration.class);
+        when(mockPlugin.getConfig()).thenReturn(fileConfiguration);
+        when(mockPlugin.getLogger()).thenReturn(Logger.getLogger("MockTwitchBotPlugin"));
+        mockWhitelistManager = mock(WhitelistManagerAPI.class);
+        when(mockPlugin.getWhitelistManager()).thenReturn(mockWhitelistManager);
+        doNothing().when(mockWhitelistManager).addUsernameToWhitelist(anyString());
+
+        twitchService = new TwitchService(mockPlugin, configuration);
+    }
+
+    @NotNull
+    private static TwitchService.TwitchServiceConfiguration getTwitchServiceConfiguration(String oauthToken) {
+        if (oauthToken == null || oauthToken.isEmpty()) {
+            throw new RuntimeException("OAUTH_TEST_TOKEN is not set in the config file!");
+        }
+        OAuth2Credential credential = new OAuth2Credential("twitch", oauthToken);
         // create arraylist with default values
         List<String> channelNames = new ArrayList<>(){{
             add("Tamara1001");
@@ -51,17 +71,9 @@ public class TwitchServiceTest {
         String offlineMessage = "Streamer {name} has stopped streaming";
 
         TwitchService.TwitchServiceConfiguration configuration = new TwitchService.TwitchServiceConfiguration(credential, channelNames, allowedRewardsIds, liveMessage, offlineMessage);
-
-        mockPlugin = mock(TwitchBotPlugin.class);
-        FileConfiguration fileConfiguration = mock(FileConfiguration.class);
-        when(mockPlugin.getConfig()).thenReturn(fileConfiguration);
-        when(mockPlugin.getLogger()).thenReturn(Logger.getLogger("MockTwitchBotPlugin"));
-        mockWhitelistManager = mock(WhitelistManagerAPI.class);
-        when(mockPlugin.getWhitelistManager()).thenReturn(mockWhitelistManager);
-        doNothing().when(mockWhitelistManager).addUsernameToWhitelist(anyString());
-
-        twitchService = new TwitchService(mockPlugin, configuration);
+        return configuration;
     }
+
     @AfterEach
     public void tearDown() {
         MockBukkit.unmock();

@@ -28,10 +28,17 @@
 		</repository>
 	</repositories>
 	<dependencies>
+
+		<dependency>
+			<groupId>com.github.seeseemelk</groupId>
+			<artifactId>MockBukkit-v1.20</artifactId>
+			<version>3.9.0</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>io.papermc.paper</groupId>
 			<artifactId>paper-api</artifactId>
-			<version>1.20.3-R0.1-SNAPSHOT</version>
+			<version>1.20.1-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -50,12 +57,6 @@
 			<groupId>dev.jorel</groupId>
 			<artifactId>commandapi-bukkit-shade</artifactId>
 			<version>9.3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.seeseemelk</groupId>
-			<artifactId>MockBukkit-v1.20</artifactId>
-			<version>3.9.0</version>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
