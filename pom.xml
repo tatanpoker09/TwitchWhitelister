@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.communitycraft.tatanpoker09</groupId>
 	<artifactId>TwitchWhitelister</artifactId>
-	<version>1.4.3</version>
+	<version>1.4.4</version>
 
 	<properties>
 		<minecraft.mappings>1.20.3-R0.1-SNAPSHOT</minecraft.mappings>
