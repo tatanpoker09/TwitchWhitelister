@@ -3,6 +3,7 @@ package com.communitycraft.tatanpoker09.whitelist;
 import com.communitycraft.tatanpoker09.plugin.TwitchBotPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.scheduler.BukkitScheduler;
 
 public class WhitelistManagerAPI {
     private final TwitchBotPlugin plugin;
@@ -18,7 +19,11 @@ public class WhitelistManagerAPI {
             plugin.getLogger().info(String.format("Player %s is already whitelisted!", offlinePlayer.getName()));
             return;
         }
-        offlinePlayer.setWhitelisted(true);
-        plugin.getLogger().info("Added to whitelist: " + username);
+        BukkitScheduler scheduler = Bukkit.getScheduler();
+        scheduler.callSyncMethod(plugin, () -> {
+            offlinePlayer.setWhitelisted(true);
+            plugin.getLogger().info("Added to whitelist: " + username);
+            return null;
+        });
     }
 }
